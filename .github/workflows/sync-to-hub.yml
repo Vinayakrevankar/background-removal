@@ -17,4 +17,4 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push --force https://sdkrastev:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/sdkrastev/chatbot_github_actions main
+        run: git push --force https://sdkrastev:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/vinayakrevankar/background-removal main
