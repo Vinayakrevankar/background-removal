@@ -56,11 +56,11 @@ text = gr.Textbox(label="Paste an image URL")
 png_file = gr.File(label="output png file")
 
 
-chameleon = load_img("butterfly.jpg", output_type="pil")
+cat = load_img("cat.jpeg", output_type="pil")
 
 url = "https://hips.hearstapps.com/hmg-prod/images/gettyimages-1229892983-square.jpg"
 tab1 = gr.Interface(
-    fn, inputs=image, outputs=slider1, examples=[chameleon], api_name="image"
+    fn, inputs=image, outputs=slider1, examples=[cat], api_name="image"
 )
 
 tab2 = gr.Interface(fn, inputs=text, outputs=slider2, examples=[url], api_name="text")
