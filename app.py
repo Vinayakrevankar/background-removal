@@ -11,7 +11,7 @@ torch.set_float32_matmul_precision(["high", "highest"][0])
 birefnet = AutoModelForImageSegmentation.from_pretrained(
     "ZhengPeng7/BiRefNet", trust_remote_code=True
 )
-birefnet.to("cuda")
+birefnet.to("cpu")
 transform_image = transforms.Compose(
     [
         transforms.Resize((1024, 1024)),
@@ -30,7 +30,7 @@ def fn(image):
 @spaces.GPU
 def process(image):
     image_size = image.size
-    input_images = transform_image(image).unsqueeze(0).to("cuda")
+    input_images = transform_image(image).unsqueeze(0).to("cpu")
     # Prediction
     with torch.no_grad():
         preds = birefnet(input_images)[-1].sigmoid().cpu()
