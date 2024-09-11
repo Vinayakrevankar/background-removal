@@ -64,11 +64,11 @@ tab1 = gr.Interface(
 )
 
 tab2 = gr.Interface(fn, inputs=text, outputs=slider2, examples=[url], api_name="text")
-tab3 = gr.Interface(process_file, inputs=image2, outputs=png_file, examples=["butterfly.jpg"], api_name="png")
+tab3 = gr.Interface(process_file, inputs=image2, outputs=png_file, examples=["cat.jpeg"], api_name="png")
 
 
 demo = gr.TabbedInterface(
-    [tab1, tab2,tab3], ["image", "text","png"], title="birefnet for background removal"
+    [tab1, tab2,tab3], ["image", "text","png"], title="Welcome to Vanishify"
 )
 
 if __name__ == "__main__":
